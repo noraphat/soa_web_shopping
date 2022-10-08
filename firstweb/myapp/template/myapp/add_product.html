@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %}
+  
+  {% block content %}
+    <h2>เพิ่มสินค้าในระบบ</h2>
+    <p>คุณสามารถเพิ่มสินค้าเข้าไปสู่ระบบได้ (เฉพาะ Admin เท่านั้น)</p>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Product Name :</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Product Name" name="name">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="price" class="form-label">Price :</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter Product price" name="price">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="detail">Product Detail :</label>
+            <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="imageurl" class="form-label">Url Product Image :</label>
+            <input type="text" class="form-control" id="imageurl" placeholder="Enter product image url" name="imageurl">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+   {% endblock content %}
